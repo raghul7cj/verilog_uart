@@ -25,6 +25,9 @@ module Tx(
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             state <= IDLE;
+            o_Tx_Active <= 0;
+            o_Tx_Done <= 0;
+            o_Tx_Serial <= 0;
         end else begin
             o_Tx_Done <= 0;
 
